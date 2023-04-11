@@ -1,0 +1,29 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://images.alphacoders.com/258/258211.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+.App {
+  width: 80%;
+  max-width: 400px;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contPlayerController {
+  width: 100%;
+  height: 20px;
+}

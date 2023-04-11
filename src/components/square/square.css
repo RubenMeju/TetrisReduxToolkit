@@ -1,0 +1,5 @@
+.grid-square {
+  width: var(--tile-size);
+  height: var(--tile-size);
+  border-radius: 4px;
+}

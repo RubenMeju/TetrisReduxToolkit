@@ -1,0 +1,22 @@
+.message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 83%;
+  height: 90%;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+.message.hidden {
+  display: none;
+}
+
+.textMessage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: aliceblue;
+  font-size: 3rem;
+}

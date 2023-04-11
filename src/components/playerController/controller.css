@@ -1,0 +1,17 @@
+.arrows {
+  display: flex;
+  gap: 1rem;
+}
+.control-button {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+}

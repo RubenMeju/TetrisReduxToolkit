@@ -1,0 +1,23 @@
+.grid-board {
+  position: relative;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var(--tile-size));
+  grid-gap: 0;
+  align-self: flex-start;
+  grid-gap: 1px; /* Add a gap! */
+  background: linear-gradient(#000000, #000000) 50% 50% / calc(100% - 40px)
+      calc(100% - 40px) no-repeat,
+    radial-gradient(
+        at 40% 70%,
+        #c9c9c9 0%,
+        #ce8ece 20.411%,
+        #c48ed1 42.061%,
+        #c9c9c9 49.218%,
+        #c518d4 100%
+      )
+      1% 19%/195% 148%;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-sizing: content-box;
+}
