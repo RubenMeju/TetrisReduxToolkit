@@ -3,7 +3,7 @@ import './nextBlock.css'
 import { shapes } from '../../utils/tetriminos'
 import { GridSquare } from '../square/GridSquare'
 
-// Draws the "next" block view showing the next block to drop
+// Dibuja la vista de bloque "siguiente" que muestra el siguiente bloque para colocar
 export default function NextBlock(props) {
   const nextShape = useSelector((state) => state.game.nextShape)
 
@@ -15,9 +15,10 @@ export default function NextBlock(props) {
     [0, 0, 0, 0]
   ];
   */
-  const box = shapes[nextShape][0] // Get the first rotation
+  // Obtener la primera rotación
+  const box = shapes[nextShape][0]
 
-  // Map the block to the grid
+  // Asignar el bloque a la grilla
   const grid = box.slice(0, 3).map((rowArray, row) => {
     return rowArray.map((square, col) => {
       return (

@@ -13,7 +13,6 @@ export const randomShape = () => {
   return random(1, shapes.length - 1)
 }
 
-// Grid initial
 export const initialGrid = () => {
   const rows = 18
   const cols = 10
@@ -29,8 +28,8 @@ export const initialGrid = () => {
   return array
 }
 
-// Returns the next rotation for a shape
-// rotation can't exceed the last index of the the rotations for the given shape.
+// Devuelve la siguiente rotación de una forma
+// la rotación no puede exceder el último índice de las rotaciones para la forma dada.
 export const nextRotation = (shape, rotation) => {
   return (rotation + 1) % shapes[shape].length
 }
@@ -38,27 +37,30 @@ export const nextRotation = (shape, rotation) => {
 export const canMoveTo = (shape, grid, x, y, rotation) => {
   console.log('me puedo mover')
   const currentShape = shapes[shape][rotation]
-  // Get the width and height of the grid
+
+  // Obtener el ancho y alto de la grilla
   const gridWidth = grid[0].length - 1
   const gridHeight = grid.length - 1
-  // Loop over the shape array
+
+  // Bucle sobre la matriz de formas
   for (let row = 0; row < currentShape.length; row++) {
     for (let col = 0; col < currentShape[row].length; col++) {
-      // If the value isn't 0 it's part of the shape
+      // Si el valor no es 0 es parte de la forma
       if (currentShape[row][col] !== 0) {
         // Offset the square to map it to the larger grid
         const proposedX = col + x
         const proposedY = row + y
-        // Get the possible row. This might be undefined if we're above the top
+
+        // Desplazar el cuadrado para mapearlo a la cuadrícula más grande
         const possibleRow = grid[proposedY]
 
-        // Off the left or right side or off the bottom return false
+        // Fuera del lado izquierdo o derecho o fuera de la parte inferior return false
         if (proposedX < 0 || proposedX > gridWidth || proposedY > gridHeight) {
           return false
         } else if (possibleRow !== undefined) {
-          // If the row is not undefined you're on the grid
+          // Si la fila no está indefinida, estás en la cuadrícula
           if (possibleRow[proposedX] !== 0) {
-            // This square must be filled
+            // Este cuadrado debe ser rellenado
             return false
           }
         }
@@ -78,7 +80,6 @@ export const addBlockToGrid = (shape, grid, x, y, rotation) => {
   console.log('rotation: ', rotation)
   */
 
-  // const playFixBlockSFX = () => FixBlockSFX()
   // En este punto el juego no ha terminado
   let blockOffGrid = false
   const block = shapes[shape][rotation]

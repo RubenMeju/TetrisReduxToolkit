@@ -22,13 +22,13 @@ export default function GridBoard(props) {
   const gridSquares = grid.map((rowArray, row) => {
     // map columns
     return rowArray.map((square, col) => {
-      // Find the block x and y on the shape grid
-      // By subtracting the x and y from the col and the row we get the position of the upper left corner of the block array as if it was superimposed over the main grid
+      // Encuentra el bloque x e y en la cuadrícula de formas
+      // Al restar x e y de la columna y la fila, obtenemos la posición de la esquina superior izquierda de la matriz de bloques como si estuviera superpuesta a la cuadrícula principal
       const blockX = col - x
       const blockY = row - y
       let color = square
-      // Map current falling block to grid.
-      // For any squares that fall on the grid we need to look at the block array and see if there is a 1 in this case we use the block color.
+      // Asigna el bloque que cae actual a la cuadrícula.
+      // Para cualquier cuadrado que caiga en la cuadrícula, debemos mirar la matriz de bloques y ver si hay un 1, en este caso usamos el color del bloque.
       if (
         blockX >= 0 &&
         blockX < block.length &&
@@ -37,9 +37,9 @@ export default function GridBoard(props) {
       ) {
         color = block[blockY][blockX] === 0 ? color : blockColor
       }
-      // Generate a unique key for every block
+      // Generar una clave única para cada bloque
       const k = row * grid[0].length + col
-      // Generate a grid square
+
       return <GridSquare key={k} color={color} />
     })
   })

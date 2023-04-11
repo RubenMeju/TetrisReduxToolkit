@@ -28,9 +28,7 @@ export function PlayerController() {
       style={{ opacity: 0 }}
       className="GameController"
       type="text"
-      // onKeyDown={onKeyDown}
       onKeyDownCapture={onKeyDown}
-      // onKeyUp={onKeyUp}
       autoFocus
     />
   )
