@@ -6,9 +6,19 @@ import Controls from './components/playerController/Controls'
 import './App.css'
 import { PlayerController } from './components/playerController/PlayerController'
 import ScoreBoard from './components/score/ScoreBoard'
+import { useEffect } from 'react'
 
 function App() {
   const { isRunning } = useSelector((state) => state.game)
+
+  const widhtScreen = window.innerWidth
+  console.log(widhtScreen)
+  useEffect(() => {
+    if (widhtScreen < 500) {
+      document.querySelector('.contPlayerController').style.display = 'none'
+    }
+  }, [widhtScreen])
+
   return (
     <div className="App">
       <ScoreBoard />
