@@ -7,7 +7,7 @@ import './App.css'
 import { PlayerController } from './components/playerController/PlayerController'
 import ScoreBoard from './components/score/ScoreBoard'
 import { useEffect } from 'react'
-
+import music1SFX from './assets/music1SFX.mp3'
 function App() {
   const { isRunning } = useSelector((state) => state.game)
 
@@ -18,9 +18,18 @@ function App() {
       document.querySelector('.contPlayerController').style.display = 'none'
     }
   }, [widhtScreen])
-
+  useEffect(() => {
+    const music = document.querySelector('#music')
+    music.volume = 0.1
+    if (isRunning) {
+      music.play()
+    } else {
+      music.pause()
+    }
+  }, [isRunning])
   return (
     <div className="App">
+      <audio id="music" src={music1SFX}></audio>
       <ScoreBoard />
       <div className="container">
         <NextBlock />
