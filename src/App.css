@@ -1,7 +1,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-image: url('https://images.alphacoders.com/258/258211.jpg');
+  background-image: url('./assets/fondo.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
