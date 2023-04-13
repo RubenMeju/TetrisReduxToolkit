@@ -8,16 +8,12 @@ import { PlayerController } from './components/playerController/PlayerController
 import ScoreBoard from './components/score/ScoreBoard'
 import { useEffect } from 'react'
 import music1SFX from './assets/music1SFX.mp3'
+import { useWidhtScreen } from './hooks/useWidhtScreen'
+
 function App() {
+  useWidhtScreen()
   const { isRunning } = useSelector((state) => state.game)
 
-  const widhtScreen = window.innerWidth
-  console.log(widhtScreen)
-  useEffect(() => {
-    if (widhtScreen < 500) {
-      document.querySelector('.contPlayerController').style.display = 'none'
-    }
-  }, [widhtScreen])
   useEffect(() => {
     const music = document.querySelector('#music')
     music.volume = 0.1
@@ -27,6 +23,7 @@ function App() {
       music.pause()
     }
   }, [isRunning])
+
   return (
     <div className="App">
       <audio id="music" src={music1SFX}></audio>
