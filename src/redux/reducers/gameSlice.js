@@ -17,7 +17,7 @@ export const initialState = {
   x: 5,
   y: -4,
   score: 0,
-  speed: 500,
+  speed: 400,
   gameOver: false,
   moveDown: false,
   moveLeft: false,

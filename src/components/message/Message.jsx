@@ -16,7 +16,7 @@ export default function Message(props) {
     message = 'Paused'
     isHidden = ''
   } else if (!isRunning && !paused) {
-    message = 'Press button to start'
+    message = 'Use the keyboard arrows or buttons'
     isHidden = ''
   }
 
