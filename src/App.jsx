@@ -5,7 +5,7 @@ import MenuButtons from './components/menu/MenuButtons'
 import './App.css'
 import ScoreBoard from './components/score/ScoreBoard'
 import { useEffect } from 'react'
-import music1SFX from './assets/tetrisTechno.mp3'
+import music1SFX from './assets/TetrisTechno.mp3'
 
 import Controls from './components/playerController/Controls'
 import usePressKey from './hooks/usePressKey'
