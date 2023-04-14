@@ -3,7 +3,9 @@ import rowDeleteSFX from '../../assets/rowDeleteSFX.mp3'
 import gameOverSFX from '../../assets/gameOverSFX.mp3'
 
 export const FixedBlockSFX = () => {
-  new Audio(fixedBlockSFX).play()
+  const audio = new Audio(fixedBlockSFX)
+  audio.volume = 0.2
+  audio.play()
 }
 
 export const RowDeleteSFX = () => {
@@ -11,5 +13,7 @@ export const RowDeleteSFX = () => {
 }
 
 export const GameOverSFX = () => {
-  new Audio(gameOverSFX).play()
+  const audio = new Audio(gameOverSFX)
+  audio.volume = 0.2
+  audio.play()
 }

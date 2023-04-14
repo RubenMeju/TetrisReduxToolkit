@@ -5,14 +5,14 @@ import MenuButtons from './components/menu/MenuButtons'
 import './App.css'
 import ScoreBoard from './components/score/ScoreBoard'
 import { useEffect } from 'react'
-import music1SFX from './assets/music1SFX.mp3'
+import music1SFX from './assets/tetrisTechno.mp3'
 
 import Controls from './components/playerController/Controls'
 import usePressKey from './hooks/usePressKey'
 
 function App() {
   const { isRunning } = useSelector((state) => state.game)
-
+  // hook to listen to key press
   const { onKeyDown } = usePressKey()
 
   useEffect(() => {
