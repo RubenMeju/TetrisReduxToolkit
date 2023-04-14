@@ -1,17 +1,20 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import GridBoard from './components/board/GridBoard'
 import NextBlock from './components/nextBlock/NextBlock'
 import MenuButtons from './components/menu/MenuButtons'
-import Controls from './components/playerController/Controls'
 import './App.css'
-import { PlayerController } from './components/playerController/PlayerController'
 import ScoreBoard from './components/score/ScoreBoard'
 import { useEffect } from 'react'
 import music1SFX from './assets/music1SFX.mp3'
-import { useWidhtScreen } from './hooks/useWidhtScreen'
+import {
+  moveDown,
+  moveLeft,
+  moveRight,
+  rotate
+} from './redux/reducers/gameSlice'
+import Controls from './components/playerController/Controls'
 
 function App() {
-  useWidhtScreen()
   const { isRunning } = useSelector((state) => state.game)
 
   useEffect(() => {
@@ -24,8 +27,25 @@ function App() {
     }
   }, [isRunning])
 
+  const dispatch = useDispatch()
+  const onKeyDown = ({ code }) => {
+    // console.log('onKeyDown', code)
+    if (code === 'ArrowLeft') {
+      dispatch(moveLeft())
+    }
+    if (code === 'ArrowRight') {
+      dispatch(moveRight())
+    }
+    if (code === 'ArrowUp') {
+      dispatch(rotate())
+    }
+    if (code === 'ArrowDown') {
+      dispatch(moveDown())
+    }
+  }
+
   return (
-    <div className="App">
+    <div className="App" onKeyDownCapture={onKeyDown}>
       <audio id="music" src={music1SFX}></audio>
       <ScoreBoard />
       <div className="container">
@@ -34,9 +54,6 @@ function App() {
       </div>
       <GridBoard />
       <Controls />
-      <div className="contPlayerController">
-        {isRunning && <PlayerController />}
-      </div>
     </div>
   )
 }
