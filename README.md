@@ -2,4 +2,5 @@
 
 El mítico juego del Tetris. Vite con React, Redux Toolkit
 
-https://github.com/RubenMeju/TetrisReduxToolkit/main/tetris.png
+
+<img src="https://github.com/RubenMeju/TetrisReduxToolkit/main/tetris.png?format=jpg&name=large" alt="JuveR" width="300px">
